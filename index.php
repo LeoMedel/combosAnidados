@@ -87,7 +87,7 @@
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Texto final:</label>
             <!-- EL TEXTO SE INCLUYE AL COMPLETAR TODOS LOS SELECT DEL FORMULARIO -->
-            <textarea class="form-control texto"></textarea>
+            <textarea class="form-control texto" disabled=""></textarea>
           </div>
         </form>
       </div>
