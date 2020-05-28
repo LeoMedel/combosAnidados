@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-05-2020 a las 01:41:41
+-- Tiempo de generación: 28-05-2020 a las 22:43:48
 -- Versión del servidor: 10.3.15-MariaDB
 -- Versión de PHP: 7.3.6
 
@@ -42,12 +42,7 @@ INSERT INTO `equipos` (`id_equipo`, `id_liga`, `equipo`) VALUES
 (1, 1, 'Pumas UNAM'),
 (2, 1, 'Puebla FC'),
 (3, 1, 'America'),
-(4, 1, 'Chivas de Guadalajara'),
-(5, 1, 'Cruz Azul'),
-(6, 1, 'Tigres'),
 (7, 2, 'Atlante'),
-(8, 2, 'Zacatepec'),
-(9, 2, 'Correcaminos FC'),
 (10, 2, 'Coras Tepic'),
 (11, 3, 'AC Milan'),
 (12, 3, 'Juventus'),
