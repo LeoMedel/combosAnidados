@@ -74,7 +74,7 @@
           <div class="form-group">
             <label>JUGADORES</label>
             <!-- Aqui se llena el combo cuando se selecciona el EQUIPO -->
-            <select class="form-control jugadores" id="selectJugador"></select>
+            <select class="form-control jugadores" id="selectJugadores"></select>
           </div>
 
           <!-- SELECT No. 5: INFORMACION-->
@@ -87,7 +87,7 @@
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Texto final:</label>
             <!-- EL TEXTO SE INCLUYE AL COMPLETAR TODOS LOS SELECT DEL FORMULARIO -->
-            <textarea class="form-control texto" disabled=""></textarea>
+            <textarea class="form-control texto" id="texto" disabled=""></textarea>
           </div>
         </form>
       </div>

@@ -3,58 +3,68 @@ $( document ).ready(function() {
 
     /*_____________________________________ PRIMER SELECT DE PAISES_________________________________________________*/
     //Evento cuando cambia el valor del SELECT PAIS
-	$( ".paises" ).change(function() {
+	$( "#selectPais" ).change(function() {
 
 		//Guardamos el id del pais seleccionado
 		var pais = $(this).val();
 		
 		//Limpiar los demas campos
-		$( ".equipos" ).empty();
-		$( ".jugadores" ).empty();
-		$( ".texto" ).empty();
+		$( "#selectEquipos" ).empty();
+		$( "#selectJugadores" ).empty();
+		$( "#selectInfo" ).empty();
+		$("#texto").empty();
 
 		//Enviamos la informacion con POST al archivo para cargar el siguiente SELECT
 		$.post( "archivosPHP/ligas.php", { id_pais: pais })
 			.done(function( data ) {
 
 			//Se carga la informacion de acuerdo a la seleccion
-			$( ".ligas" ).html( data );
+			$( "#selectLigas" ).html( data );
 		});
 	});
 	
 
 	/*_____________________________________ SEGUNDO SELECT DE LIGAS _________________________________________________*/
     //Evento cuando cambia el valor del SELECT LIGAS
-	$( ".ligas" ).change(function() {
+	$( "#selectLigas" ).change(function() {
 		//Guardamos el id de la Liga seleccionada
 		var liga = $(this).val();
+
+		//Limpiar los demas campos
+		$( "#selectJugadores" ).empty();
+		$( "#selectInfo" ).empty();
+		$("#texto").empty();
 
 		//Enviamos la informacion con POST al archivo para cargar el siguiente SELECT
 		$.post( "archivosPHP/equipos.php", { id_liga: liga })
 			.done(function( data ) {
 			//Se carga la informacion de acuerdo a la seleccion
-			$( ".equipos" ).html( data );
+			$( "#selectEquipos" ).html( data );
 		});
 	});
 
 
 	/*_____________________________________ TERCER SELECT DE EQUIPOS _________________________________________________*/
     //Evento cuando cambia el valor del SELECT EQUIPOS
-	$( ".equipos" ).change(function() {
+	$( "#selectEquipos" ).change(function() {
 		//Guardamos el id del Equipo seleccionado
 		var equipo = $(this).val();
+
+		//Limpiar los demas campos
+		$( "#selectInfo" ).empty();
+		$("#texto").empty();
 		
 		//Enviamos la informacion con POST al archivo para cargar el siguiente SELECT
 		$.post( "archivosPHP/jugadores.php", { id_equipo: equipo })
 			.done(function( data ) {
 			//Se carga la informacion de acuerdo a la seleccion
-			$( ".jugadores" ).html( data );
+			$( "#selectJugadores" ).html( data );
 		});
 	});
 
 	/*_____________________________________ CUARTO SELECT DE JUGADORES _________________________________________________*/
     //Evento cuando cambia el valor del SELECT JUGADORES
-	$( ".jugadores" ).change(function() {
+	$( "#selectJugadores" ).change(function() {
 		//Guardamos el id del Jugador seleccionado
 		var jugador = $(this).val();
 
@@ -62,14 +72,14 @@ $( document ).ready(function() {
 		$.post( "archivosPHP/informacion.php", { id_jugador: jugador })
 			.done(function( data ) {
 			//Se carga la informacion de acuerdo a la seleccion
-			$( ".info" ).html( data );
+			$( "#selectInfo" ).html( data );
 		});
 	});
 
 
 	/*_____________________________________ QUINTO SELECT DE INFORMACION _________________________________________________*/
     //Evento cuando cambia el valor del SELECT INFORMACION
-	$( ".info" ).change(function() {
+	$( "#selectInfo" ).change(function() {
 
 		//Este change es solo para crear un texto con todas las opciones seleccionadas
 		//Primero se obtiene todos los datos de los select
@@ -81,13 +91,13 @@ $( document ).ready(function() {
 		var dato = $(this).val();
 
 		//Limpiar texto escrito si exite
-		$(".texto").empty();
+		$("#texto").empty();
 		
 		//Crear un texto con la informacion de todo el formulario
 		var textoFinal = jugador + " (" +datoTexto+": " +dato+") es jugador del " + equipo + ", en el actual torneo de " + liga + " en " + pais;
 
 		//Añadir el texto que resulta de completar el formulario
-		$(".texto").append(document.createTextNode(textoFinal));
+		$("#texto").append(document.createTextNode(textoFinal));
 		
 	});
 
