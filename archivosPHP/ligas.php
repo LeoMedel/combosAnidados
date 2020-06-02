@@ -4,7 +4,7 @@
 
 	$idPais = $_POST['id_pais'];
 
-	$infoLigas = $conexionPDO->prepare("SELECT * FROM liga WHERE id_pais = $idPais ");
+	$infoLigas = $conexionPDO->prepare("SELECT * FROM liga WHERE id_pais = $idPais order by liga DESC ");
     $infoLigas->execute();
     $ligas = $infoLigas->fetchAll();
 
