@@ -12,7 +12,7 @@ try
 }
 catch (PDOException $exception)
 {
-die ('Failed to connect to database!');
+die ('Error al conectar con la Base de datos Proyecto!');
 }
 
 
