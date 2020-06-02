@@ -1,24 +1,9 @@
-.divGeneral {
-    position: absolute;
-    left: 5%;
-    top: 10%;     
-    background-image: url('Images/loginBox.png');
-    /*width:546px;
-    height:265px;
-    margin-left: -273px; /*half width*/
-    /*margin-top: -132px; /*half height*/
-}
 
 footer {
   background-color: #869087;
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 200px;
+  height: 100px;
   color: white;
-}
-
-#balon
-{
-  transition: .1s all;
 }
